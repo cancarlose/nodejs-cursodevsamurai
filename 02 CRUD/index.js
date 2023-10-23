@@ -18,12 +18,13 @@ server.get("/customers", (req, res) => {
     return res.json(customers);
 });
 
-
 // Método de captura de forma mais especifica
 server.get("/customers/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const customer = customers.find(item => item.id === id); 
     const status = customer ? 200 : 404;
+
+    console.log("GET :: /customers/id ", JSON.stringify(customer));
 
     return res.status(status).json(customer);
 });
