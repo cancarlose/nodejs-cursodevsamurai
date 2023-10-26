@@ -1,9 +1,9 @@
 // Importação
-const { Router } = require("express"); // sistema de rotas do express.
-const routes = new Router(); // possibilidade de ter as rotas
-
+import { Router } from "express"; // sistema de rotas do express.
 // Requirindo o controller
-const customers = require("./app/controller/CustomersController");
+import customers from "./app/controller/CustomersController";
+
+const routes = new Router(); // possibilidade de ter as rotas
 
 // Agora, controller responsável pelos métodos
 routes.get("/customers", customers.index);
@@ -12,4 +12,4 @@ routes.post("/customers", customers.create);
 routes.put("/customers/:id", customers.update);
 routes.delete("/customers/:id", customers.destroy);
 
-module.exports = routes; // exportação
+export default routes; // exportação

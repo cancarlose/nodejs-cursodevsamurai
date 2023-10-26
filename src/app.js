@@ -1,8 +1,8 @@
 // Requerimento do ExpressJS
-const express = require("express");
+import express from "express";
 // trazendo as rotas
-const routes = require("./routes.js");
-// Parte de importação (require) acima ^
+import routes from "./routes.js";
+// Parte de importação acima ^
 
 class App {
     constructor() {
@@ -25,4 +25,4 @@ class App {
 
 
 // sempre que importar algo com require, tudo no export sera retornado.
-module.exports = new App().server;// Dessa forma, exportamos esse módulo.
+export default new App().server;// Dessa forma, exportamos esse módulo.
